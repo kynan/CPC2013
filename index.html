@@ -196,6 +196,26 @@ void kernel(double A[1][1], double *x[2],
 
 ---
 
+## PyOP2 Data Model
+
+### Mesh topology
+* Sets – cells, vertices, etc
+* Maps – connectivity between entities in different sets
+
+### Data
+* Dats - Defined on sets (hold pressure, temperature, etc)
+
+### Kernels
+* Executed in parallel on a set
+* Read / write / increment data accessed via maps
+
+### Linear algebra
+* Matrix sparsities defined by mappings
+* Matrix data on sparsities
+* Kernels compute a local matrix – PyOP2 handles global assembly
+
+---
+
 ## PyOP2 Architecture
 * Parallel scheduling: partitioning, staging and coloring
 * Runtime code generation and JIT compilation
