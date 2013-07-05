@@ -218,6 +218,40 @@ void kernel(double A[1][1], double *x[2],
 
 ---
 
+.left-column[
+## PyOP2 Kernels and Parallel Loops
+
+Performance portability for *any* unstructured mesh computations, not limited to FEM!
+]
+.right-column[
+### Parallel loop syntax
+```python
+op2.par_loop(kernel, iteration_set,
+             kernel_arg1(mapping[index], access_mode),
+             ...,
+             kernel_argN(mapping[index], access_mode))
+```
+
+### PyOP2 kernel for re-normalising a vector field
+*Direct loop*: Accessed via *identity mapping*
+```python
+vec_norm = op2.Kernel("""
+void vec_norm(double *u)
+{
+  const double n = sqrt(u[0] * u[0] + u[1] * u[1]);
+  u[0] /= n;
+  u[1] /= n;
+}
+""", "vec_norm")
+
+op2.par_loop(vec_norm, nodes,
+             u(op2.IdentityMap, op2.RW))
+```
+Future work: define kernels as Python functions
+]
+
+---
+
 ## PyOP2 Architecture
 * Parallel scheduling: partitioning, staging and coloring
 * Runtime code generation and JIT compilation
