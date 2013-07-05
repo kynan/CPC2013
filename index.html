@@ -404,6 +404,26 @@ def solve(equation, x):
 
 ---
 
+## Conclusions and Future Work
+
+### Conclusions
+* PyOP2: a high-level interface to unstructured mesh based methods  
+  *Efficiently execute kernels over an unstructured grid in parallel*
+* Firedrake: a performance-portable finite-element computation framework  
+  *Drive FE computations from a high-level problem specification*
+* Two-layer abstraction for FEM computation from UFL sources
+* Decoupling of UFL (FEM) and PyOP2 (parallelisation) layers
+* Target-specific runtime code generation and JIT compilation
+* Performance portability for unstructured grid applications: FEM, non-FEM or combinations
+
+### Future Work
+* Auto-tuning of optimization parameters (e.g. iteration space)
+* Support for curved (isoparametric) finite elements
+* Kernel fusion, lazy evaluation
+* Alternative code generation / JIT approaches (LLVM)
+
+---
+
 ## Thank you!
 
 Contact: Florian Rathgeber, [@frathgeber](https://twitter.com/frathgeber), f.rathgeber@imperial.ac.uk
