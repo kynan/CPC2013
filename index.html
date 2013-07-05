@@ -173,6 +173,15 @@ L = v * f * dx
 The [FEniCS Form Compiler](https://bitbucket.org/fenics-project/ffc) FFC compiles UFL forms to low-level code.
 ]
 .right-column[
+**Helmholtz equation**
+`$$\int_\Omega \nabla v \cdot \nabla u - \lambda v u ~dV = \int_\Omega v f ~dV$$`
+
+**UFL expression**
+```python
+a = (dot(grad(v), grad(u)) - lmbda * v * u) * dx
+```
+
+**Generated C code**
 ```c
 // A - local tensor to assemble
 // x - local coordinates
