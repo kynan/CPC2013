@@ -137,7 +137,7 @@ background-image:url(images/fem.svg)
 ---
 
 .left-column[
-## UFL: Domain-specific language for FE forms
+## UFL: High-level definition of finite-element forms
 
 UFL is the [Unified Form Language](https://bitbucket.org/fenics-project/ufl) from the [FEniCS project](http://fenicsproject.org).
 ]
@@ -146,7 +146,9 @@ UFL is the [Unified Form Language](https://bitbucket.org/fenics-project/ufl) fro
 
 `$$\int_\Omega \nabla v \cdot \nabla u - \lambda v u ~dV = \int_\Omega v f ~dV$$`
 
-### And its literal translation to Python with UFL
+### And its (almost) literal translation to Python with UFL
+
+UFL: embedded domain-specific language (eDSL) for weak forms of partial differential equations (PDEs)
 ```python
 e = FiniteElement('CG', 'triangle', 1)
 
@@ -157,7 +159,7 @@ f = Coefficient(e)
 lmbda = 1
 a = (dot(grad(v), grad(u)) - lmbda * v * u) * dx
 
-L = v*f*dx
+L = v * f * dx
 ```
 ]
 
