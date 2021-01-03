@@ -40,8 +40,8 @@ All the code is open source under BSD or LGPLv3 license
 <https://github.com/OP2/PyOP2_benchmarks>
 
 ### This talk
-<http://kynan.github.io/CPC2013>
+<https://kynan.github.io/CPC2013>
 
-[1]: http://kynan.github.io/CPC2013
+[1]: https://kynan.github.io/CPC2013
 [2]: http://labexcompilation.ens-lyon.fr/cpc2013/program/
 [3]: http://labexcompilation.ens-lyon.fr/cpc2013/
