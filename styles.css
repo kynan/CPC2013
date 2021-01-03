@@ -45,13 +45,15 @@ code {
   -web-border-radius: 5px;
   background: #e7e8e2;
   border-radius: 5px;
-  font-size: 16px;
 }
 code.has-jax {
   font: inherit;
   font-size: 100%;
   background: inherit;
   border: inherit;
+}
+code.remark-code {
+  font-size: 16px;
 }
 .pull-left {
   float: left;
